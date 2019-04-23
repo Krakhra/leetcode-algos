@@ -65,6 +65,34 @@ class Node(object):
     if self.right:
       self.right.inorder()
 
-
+class BST(object):
+  def __init__(self):
+    self.root = None
   
+  def insert(self,data):
+    if not self.root:
+      self.root = Node(data)
+    else:
+      self.root.insert(data)
+
+  def remove(self,data):
+    if self.root:
+      if self.root.data == data:
+        temp = Node(None)
+        temp.left = self.root
+        self.root.remove(data,temp)
+      else:
+        self.remove(data,None)
+  
+  def getMax(self):
+    if self.root.right:
+      return self.root.right.getMax()
+
+  def getMin(self):
+    if self.root.left:
+      return self.root.left.getMin()
+  
+  def inorder(self):
+    if self.root:
+      self.root.inorder()
   
