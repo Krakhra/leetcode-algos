@@ -8,12 +8,12 @@ class Node(object):
   def insert(self,data):
     if data < self.data:
       if not self.left:
-        self.left.data = data 
+        self.left = Node(data) 
       else:
         self.left.insert(data)
     else:
       if not self.right:
-        self.right.data = data
+        self.right = Node(data)
       else:
         self.right.insert(data)
   #method to remove node
@@ -35,14 +35,14 @@ class Node(object):
           temp = self.left
         else:
           temp = self.right
-        parent = self.right
+        node.left = temp
       #if node is right leaf
       elif node.right == self:
         if self.right:
           temp = self.left
         else:
           temp = self.right
-        parent.right = temp
+        node.right = temp
 
   
   #method to get min element
@@ -82,12 +82,8 @@ class BST(object):
         temp.left = self.root
         self.root.remove(data,temp)
       else:
-        self.remove(data,None)
+        self.remove(data)
   
-  def getMax(self):
-    if self.root.right:
-      return self.root.right.getMax()
-
   def getMin(self):
     if self.root.left:
       return self.root.left.getMin()
@@ -96,3 +92,13 @@ class BST(object):
     if self.root:
       self.root.inorder()
   
+bst = BST()
+
+bst.insert(5)
+bst.insert(6)
+bst.insert(1)
+bst.insert(3)
+bst.insert(2)
+bst.insert(10)
+
+bst.inorder()
