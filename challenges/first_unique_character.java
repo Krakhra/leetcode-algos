@@ -22,14 +22,19 @@ public class first_unique_character{
     //iterate map
     int index =0;
     for(Map.Entry<Character, Integer> entry : hmap.entrySet()){
-      if(hmap.)
+      System.out.println(entry.getKey() + ", " + entry.getValue());
+      // if(entry.getValue() == 0){
+      //   return index;
+      // }
+      index++;
     }
 
-    return 0;
+    return -1;
   }
 
   public static void main(String args[]){
-    String test = "LeetCode";
-    unique(test);
+    String test = "LoveLeetCode";
+    int out = unique(test);
+    System.out.println(out);
   }
 }
