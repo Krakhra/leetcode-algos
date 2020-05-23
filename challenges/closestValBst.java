@@ -4,6 +4,8 @@
     the closest value to the target in the bst
  */
 
+// Average: Time complexity is O(log(n)) Space O(log(n))
+//Worst: Time O(n) Space O(n) - when tree is linear 
 class Program {
   public static int findClosestValueInBst(BST tree, int target) {
     return findClosestValueInBst(tree, target, Integer.MAX_VALUE);
