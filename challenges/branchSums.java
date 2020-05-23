@@ -4,6 +4,7 @@
 
 import java.util.*;
 
+// Time Complexity O(n) Space O(n)
 class Program {
   // This is the class of the input root. Do not edit it.
   public static class BinaryTree {
