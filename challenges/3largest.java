@@ -3,6 +3,7 @@
     array, returns a sorted array of the three largest integers in the input array
 */
 
+// O(n) Time Complexity, O(1) Space
 class Program {
   public static int[] findThreeLargestNumbers(int[] array) {
     int[] lg_vals = {Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
