@@ -8,11 +8,17 @@
 //Worst: Time O(n) Space O(n) - when tree is linear 
 class Program {
   public static int findClosestValueInBst(BST tree, int target) {
-    return findClosestValueInBst(tree, target, Integer.MAX_VALUE);
+    return findVal(tree, target, Integer.MAX_VALUE);
   }
 	
-	public static int findClosestValueInBst(BST tree, int target, int closest){
+	public static int findVal(BST tree, int target, int closest){
+		if(Math.abs(target-tree.value) < Math.abs(target-closest)){
+			closest = tree.value;
+		}
 		
+		if(target < tree.value && tree.left != null){return findVal(tree.left,target,closest);}
+		else if(target > tree.value && tree.right != null){return findVal(tree.right,target,closest);}
+		else{return closest;}
 	}
 
   static class BST {
